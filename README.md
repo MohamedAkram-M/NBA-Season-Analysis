@@ -14,26 +14,34 @@
 
 <br/>
 
-> **Who's really the best player of the 2023-24 NBA season — and does the data agree with the hype?**
+![Dataset](https://img.shields.io/badge/Dataset-450%2B%20Players-1d428a?style=flat-square)
+![Season](https://img.shields.io/badge/Season-2023--2024-c8102e?style=flat-square)
+![Stats](https://img.shields.io/badge/Stats-30%20Columns-green?style=flat-square)
+
+<br/>
+
+> ### 🏀 A roster efficiency analysis tool for NBA coaching staff and front offices — identifying positional mismatches, contract value, and offensive output across the 2023–24 season.
 
 </div>
 
 ---
 
-## 🏀 Overview
+## 📌 Overview
 
-This project is an end-to-end sports analytics pipeline analyzing the full **2023-2024 NBA Regular Season** dataset. It covers data cleaning, metric engineering, SQL-based querying, and interactive Power BI dashboards — all built to answer real basketball performance questions using data.
+This project goes beyond typical stats leaderboards. It is designed as a **business intelligence tool for NBA organizations** — helping coaches and front offices make smarter decisions about roster construction, player deployment, and contract value.
+
+Built on the full 2023–2024 NBA Regular Season dataset across 450+ players and 30 statistical columns, the pipeline covers data cleaning, custom metric engineering, SQL-based querying, and an interactive Power BI dashboard.
 
 ---
 
-## 🎯 Key Questions Answered
+## 🎯 Business Questions
 
-| # | Question |
-|---|----------|
-| 1 | Who are the top performers by points, assists, and rebounds? |
-| 2 | Which position dominates each statistical category? |
-| 3 | Which teams have the strongest offensive output? |
-| 4 | Who are the most *efficient* scorers — not just the highest scorers? |
+| # | Question | Business Value |
+|---|----------|---------------|
+| 1 | **Position Dominance** — Which position leads each stat category? | Benchmark players against position peers & set role expectations |
+| 2 | **Team Offensive Output** — Which franchises produce the most scoring? | Compare roster output against the league to identify offensive gaps |
+| 3 | **Position Outliers** — Which players don't fit their position statistically? | Identify versatile players and tactical mismatches for coaching advantage |
+| 4 | **Dead Weight** — Which high-minute players hurt more than they help? | Flag bad contracts and inefficient roster spots for front office decisions |
 
 ---
 
@@ -77,7 +85,7 @@ nba-season-analytics/
 Beyond the raw stats, three custom performance metrics were created:
 
 - **Points Per Minute (PTS/MIN)** — Normalizes scoring output by actual playing time, not just games played
-- **Player Efficiency Score** — Composite metric combining PTS + TRB + AST + STL + BLK − TOV
+- **Efficiency Score** — Composite metric combining PTS + TRB + AST + STL + BLK − TOV
 - **True Shooting % (TS%)** — Accounts for 2-pointers, 3-pointers, and free throws to measure real scoring efficiency
 
 ---
@@ -108,10 +116,10 @@ Download from Kaggle: [2023-2024 NBA Player Stats](https://www.kaggle.com/datase
 ## 📈 Dashboard Preview
 
 > Power BI dashboard coming soon — will feature:
-> - Player leaderboard with dynamic slicers by team and position
-> - Efficiency vs. scoring scatter plot
-> - Team-level offensive output comparison
-> - Position breakdown across all key stats
+> - Position dominance breakdown across all key stats
+> - Team offensive output league-wide comparison
+> - Position outlier scatter plots by z-score
+> - Dead weight flagging by minutes vs efficiency
 
 ---
 
@@ -120,11 +128,12 @@ Download from Kaggle: [2023-2024 NBA Player Stats](https://www.kaggle.com/datase
 **Mohamed Akram**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/mohamed-akram-71a3b831b/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github)](https://github.com/MohamedAkram-M)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat&logo=gmail)](mailto:ma6858349@gmail.com)
 
 ---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=1d428a,c8102e&height=120&section=footer" width="100%"/>
 
 </div>
