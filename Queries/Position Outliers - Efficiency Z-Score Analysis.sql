@@ -1,6 +1,3 @@
-USE NBA_Analytics;
-GO
-
 -- =============================================
 -- Q3: Position Outliers - Efficiency Z-Score Analysis
 -- =============================================

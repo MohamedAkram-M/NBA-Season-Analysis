@@ -1,6 +1,3 @@
-USE NBA_Analytics;
-GO
-
 -- =============================================
 -- Q4: Dead Weight - High Minutes Low Efficiency
 -- =============================================

@@ -45,6 +45,54 @@ Built on the full 2023–2024 NBA Regular Season dataset across 450+ players and
 
 ---
 
+## 📊 Engineered Metrics
+
+Beyond the raw stats, three custom performance metrics were created:
+
+- **Points Per Minute (PTS/MIN)** — Normalizes scoring output by actual playing time, not just games played
+- **Game Score (Efficiency)** — `PTS + TRB + AST + STL + BLK − TOV`. A simplified version of John Hollinger's Game Score formula — a quick, widely-used approximation of a player's overall statistical contribution per game
+- **True Shooting % (TS%)** — Accounts for 2-pointers, 3-pointers, and free throws to measure real scoring efficiency
+
+> **Why Game Score and not PER?** The NBA's official advanced metrics (PER, Win Shares, BPM, VORP) require minute-weighted and team-context data not available in this dataset. Game Score is a publicly documented, respected approximation analysts use when that deeper data isn't available.
+
+---
+
+## 📈 Position Outliers — Methodology
+
+Q3 uses **z-scores** to identify players who underperform relative to their position peers:
+
+```
+z = (player_efficiency − position_average) / position_standard_deviation
+```
+
+Players are flagged into three severity tiers:
+- **Underperformer** — z-score between -1.5 and -1.2
+- **Significant Underperformer** — z-score between -2 and -1.5
+- **Critical Underperformer** — z-score below -2
+
+> **Limitation:** Z-scores assume a normal distribution. Real NBA performance data is right-skewed (most players cluster around average, with a long tail of elite scorers), so the theoretical bell curve doesn't perfectly match the actual data shape — visible in the distribution chart below. The z-score thresholds remain statistically valid for identifying relative outliers, but this skew is worth noting as an analytical limitation.
+
+---
+
+## 🖼️ Visualizations
+
+**Position Performance Analysis**
+![Position Dominance](Visualisation/q1_position_dominance.png)
+
+**Position Performance Radar**
+![Position Radar](Visualisation/q1_radar_chart.png)
+
+**Team Offensive Output**
+![Team Offensive Output](Visualisation/q2_team_offensive_output.png)
+
+**Position Outliers — Z-Score Distribution**
+![Position Outliers](Visualisation/q3_position_outliers.png)
+
+**Dead Weight Analysis**
+![Dead Weight](Visualisation/q4_dead_weight.png)
+
+---
+
 ## 🗂️ Project Structure
 
 ```
@@ -55,10 +103,21 @@ nba-season-analytics/
 │   └── nba_cleaned.csv                            ← cleaned output
 │
 ├── 📁 notebooks/
-│   └── 01_cleaning.ipynb                          ← cleaning & EDA
+│   ├── 01_cleaning.ipynb                          ← cleaning & EDA
+│   └── 02_visualization.ipynb                     ← SQL connection & matplotlib
 │
 ├── 📁 sql/
-│   └── queries.sql                                ← analytical queries
+│   ├── q1_position_performance.sql
+│   ├── q2_team_offensive_output.sql
+│   ├── q3_position_outliers.sql
+│   └── q4_dead_weight.sql
+│
+├── 📁 Visualisation/
+│   ├── q1_position_dominance.png
+│   ├── q1_radar_chart.png
+│   ├── q2_team_offensive_output.png
+│   ├── q3_position_outliers.png
+│   └── q4_dead_weight.png
 │
 ├── 📁 dashboard/
 │   └── nba_dashboard.pbix                         ← Power BI file
@@ -72,21 +131,12 @@ nba-season-analytics/
 
 | Tool | Purpose |
 |------|---------|
-| **Python (pandas, matplotlib, seaborn)** | Data cleaning & exploration |
-| **SQL** | Aggregations, rankings, KPI queries |
+| **Python (pandas, matplotlib, scipy)** | Data cleaning, SQL connection, visualization |
+| **SQL Server** | Aggregations, rankings, KPI queries |
+| **pyodbc** | Python ↔ SQL Server connection |
 | **Power BI** | Interactive dashboards |
 | **Jupyter Notebook** | Analysis environment |
 | **VS Code** | Development environment |
-
----
-
-## 📊 Engineered Metrics
-
-Beyond the raw stats, three custom performance metrics were created:
-
-- **Points Per Minute (PTS/MIN)** — Normalizes scoring output by actual playing time, not just games played
-- **Efficiency Score** — Composite metric combining PTS + TRB + AST + STL + BLK − TOV
-- **True Shooting % (TS%)** — Accounts for 2-pointers, 3-pointers, and free throws to measure real scoring efficiency
 
 ---
 
@@ -118,7 +168,7 @@ Download from Kaggle: [2023-2024 NBA Player Stats](https://www.kaggle.com/datase
 > Power BI dashboard coming soon — will feature:
 > - Position dominance breakdown across all key stats
 > - Team offensive output league-wide comparison
-> - Position outlier scatter plots by z-score
+> - Position outlier distribution by severity tier
 > - Dead weight flagging by minutes vs efficiency
 
 ---
