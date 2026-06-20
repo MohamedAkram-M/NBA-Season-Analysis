@@ -1,14 +1,3 @@
-CREATE DATABASE NBA_Analytics;
-GO
-
-USE NBA_Analytics;
-GO
-
-SELECT TOP 5 * FROM nba_players;
-
-
-USE NBA_Analytics;
-
 -- Q1: Average stats per position (TOT rows only, min 20 games)
 SELECT 
     Pos,
