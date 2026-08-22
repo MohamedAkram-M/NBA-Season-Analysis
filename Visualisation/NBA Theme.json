@@ -1,0 +1,39 @@
+﻿{
+  "name": "NBA Analytics",
+  "dataColors": [
+    "#1D428A",
+    "#C8102E",
+    "#FDB927",
+    "#FFFFFF",
+    "#3599B8",
+    "#4AC5BB",
+    "#FB8281",
+    "#F4D25A",
+    "#FDAB89",
+    "#28738A",
+    "#168980",
+    "#BB4A4A"
+  ],
+  "textClasses": {
+    "callout": {
+      "fontSize": 45,
+      "fontFace": "Barlow Condensed",
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "fontSize": 16,
+      "fontFace": "Barlow Condensed",
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Barlow Condensed",
+      "color": "#FFFFFF"
+    },
+    "label": {
+      "fontSize": 11,
+      "fontFace": "Barlow Condensed",
+      "color": "#FFFFFF"
+    }
+  }
+}

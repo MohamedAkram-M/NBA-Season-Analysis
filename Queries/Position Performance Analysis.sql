@@ -1,4 +1,10 @@
+Use NBA_Analytics
+
+
+
+
 -- Q1: Average stats per position (TOT rows only, min 20 games)
+CREATE VIEW vw_position_dominance AS
 SELECT 
     Pos,
     COUNT(Distinct Player)          AS player_count,
@@ -11,4 +17,4 @@ FROM nba_players
 WHERE Tm != 'TOT'
 AND G >= 20
 GROUP BY Pos
-ORDER BY avg_points DESC;
+-- ORDER BY avg_points DESC;

@@ -2,6 +2,7 @@
 -- Q4: Dead Weight - High Minutes Low Efficiency
 -- =============================================
 
+CREATE VIEW vw_dead_weight AS
 SELECT
     Player,
     Pos,
@@ -13,4 +14,4 @@ WHERE MP >= 20
 AND Tm != 'TOT'
 AND G >= 20
 AND (PTS + TRB + AST + STL + BLK - TOV) <= 13
-ORDER BY efficiency ASC;
+--ORDER BY efficiency ASC;

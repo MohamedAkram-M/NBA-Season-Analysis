@@ -1,6 +1,7 @@
 -- =============================================
 -- Q2: Team Offensive Output Analysis
 -- =============================================
+CREATE VIEW vw_team_offensive_output AS
 
 SELECT 
     Tm                              AS Team,
@@ -11,4 +12,4 @@ FROM nba_players
 WHERE Tm != 'TOT'
 AND G >= 20
 GROUP BY Tm
-ORDER BY [Total Score] DESC;
+--ORDER BY [Total Score] DESC;
