@@ -10,7 +10,7 @@
 ![Pandas](https://img.shields.io/badge/Pandas-2.0-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![PowerBI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-Green?style=for-the-badge)
 
 <br/>
 
@@ -45,17 +45,6 @@ Built on the full 2023–2024 NBA Regular Season dataset across 450+ players and
 
 ---
 
-## 📊 Engineered Metrics
-
-Beyond the raw stats, three custom performance metrics were created:
-
-- **Points Per Minute (PTS/MIN)** — Normalizes scoring output by actual playing time, not just games played
-- **Game Score (Efficiency)** — `PTS + TRB + AST + STL + BLK − TOV`. A simplified version of John Hollinger's Game Score formula — a quick, widely-used approximation of a player's overall statistical contribution per game
-- **True Shooting % (TS%)** — Accounts for 2-pointers, 3-pointers, and free throws to measure real scoring efficiency
-
-> **Why Game Score and not PER?** The NBA's official advanced metrics (PER, Win Shares, BPM, VORP) require minute-weighted and team-context data not available in this dataset. Game Score is a publicly documented, respected approximation analysts use when that deeper data isn't available.
-
----
 
 ## 📈 Position Outliers — Methodology
 
@@ -93,6 +82,16 @@ Players are flagged into three severity tiers:
 
 ---
 
+## 🖼️ Dashboard
+**League Overview**
+![Roster Efficiency & Business Intelligence](Visualisation/LEAGUE%20OVERVIEW.png)
+
+**Team Intelligence**
+![Offensive Output by Franchise](Visualisation/TEAM%20INTELLIGENCE.png)
+
+**Roster Alerts**
+![Offensive Output by Franchise](Visualisation/ROSTER%20ALERTS.png)
+
 ## 🗂️ Project Structure
 
 ```
@@ -117,7 +116,10 @@ nba-season-analytics/
 │   ├── q1_radar_chart.png
 │   ├── q2_team_offensive_output.png
 │   ├── q3_position_outliers.png
-│   └── q4_dead_weight.png
+│   ├── q4_dead_weight.png
+│   └── LEAGUE OVERVIEW.png
+│   ├── TEAM INTELLIGENCE.png
+│   └── ROSTER ALERTS.png
 │
 ├── 📁 dashboard/
 │   └── nba_dashboard.pbix                         ← Power BI file
