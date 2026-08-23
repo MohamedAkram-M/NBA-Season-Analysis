@@ -87,7 +87,7 @@ Players are flagged into three severity tiers:
 ![Roster Efficiency & Business Intelligence](Visualisation/LEAGUE%20OVERVIEW.png)
 
 **Team Intelligence**
-![Offensive Output by Franchise](Visualisation/TEAM%20INTELLIGENCE.png)
+![Offensive Output by Franchise](Visualisation/Team%20Intelligence.png)
 
 **Roster Alerts**
 ![Offensive Output by Franchise](Visualisation/ROSTER%20ALERTS.png)
